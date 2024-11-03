@@ -1,0 +1,121 @@
+# flexiaccess.admin_settings:
+#   path: '/admin/config/people/flexiaccess'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\SimpleForm'
+#     _title: 'Flexi access'
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.simple_form:
+#   path: '/examples/form-api-example/simple-form'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\SimpleForm'
+#     _title: 'Simple form'
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.input_demo:
+#   path: '/examples/form-api-example/input-demo'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\InputDemo'
+#     _title: 'Common input elements'
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.state_demo:
+#   path: '/examples/form-api-example/state-demo'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\StateDemo'
+#     _title: 'Form state binding'
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.container_demo:
+#   path: '/examples/form-api-example/container-demo'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\ContainerDemo'
+#     _title: 'Container elements'
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.vertical_tabs_demo:
+#   path: '/examples/form-api-example/vertical-tabs-demo'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\VerticalTabsDemo'
+#     _title: 'Vertical tab elements'
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.modal_form:
+#   path: '/examples/form-api-example/modal-form/{nojs}'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\ModalForm'
+#     _title: 'Modal form'
+#     nojs: ajax
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.ajax_color_demo:
+#   path: '/examples/form-api-example/ajax-color-demo'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\AjaxColorForm'
+#     _title: 'AJAX color form'
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.build_demo:
+#   path: '/examples/form-api-example/build-demo'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\BuildDemo'
+#     _title: 'Build form demo'
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.ajax_add_more:
+#   path: '/examples/form-api-example/ajax-add-more'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\AjaxAddMore'
+#     _title: 'Add-more button'
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.ajax_add_remove_elements:
+#   path: '/examples/form-api-example/ajax-add-remove-elements'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\AjaxAddRemoveElements'
+#     _title: 'AJAX add and remove elements'
+#   requirements:
+#     _permission: 'access content'
+
+# flexiaccess.multistep_form:
+#   path: '/examples/form-api-example/multistep-form'
+#   defaults:
+#     _form: '\Drupal\form_api_example\Form\MultistepForm'
+#     _title: 'Multistep form'
+#   requirements:
+#     _permission: 'access content'
+
+
+
+flexiaccess.flexiaccess_settings:
+  path: '/admin/config/people/flexiaccess'
+  defaults:
+    _title: 'Flexi access'
+    _form: 'Drupal\flexiaccess\Form\FlexiaccessSettingsForm'
+  requirements:
+    _permission: 'administer flexiaccess'
+
+flexiaccess.node:
+  path: '/node/{node}/flexiaccess'
+  defaults:
+    _title: 'Flexi access'
+    _form: '\Drupal\flexiaccess\Form\FlexiaccessNodeForm'
+  requirements:
+    _permission: 'access content'
+    #_custom_access: '\Drupal\flexiaccess\Access\NodeAccessCheck::access'
+  options:
+    parameters:
+      node:
+        type: 'entity:node'
+  type: entity_local_task
+  weight: 10

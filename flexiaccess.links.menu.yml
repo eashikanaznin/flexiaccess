@@ -1,0 +1,6 @@
+flexiaccess.flexiaccess_settings:
+  title: Flexi access
+  description: Administer flexi access
+  parent: system.admin_config_people
+  route_name: flexiaccess.flexiaccess_settings
+  weight: 10

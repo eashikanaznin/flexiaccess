@@ -1,0 +1,38 @@
+<?php
+
+/**
+ * @file
+ * Install file for flexiaccess.
+ */
+
+ 
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_install().
+ */
+function flexiaccess_install() {
+  $url = Url::fromRoute('system.status')->toString();
+  \Drupal::messenger()->addWarning(t('Enabling Flexi access module. You need to <a href="@url">rebuild permissions</a>.', ['@url' => $url]));
+}
+
+
+// /**
+//  * Implements hook_disable().
+//  */
+// function flexiaccess_disable() {
+//   flexiaccess_disabling(TRUE);
+// }
+
+/**
+ * Implements hook_uninstall().
+ */
+// function flexiaccess_uninstall() {
+//   $flexiaccess_types = variable_get('flexiaccess_types', array());
+//   foreach ($flexiaccess_types as $key => $val) {
+//     variable_del('flexiaccess_typesettings_' . $key . '_autoACL');
+//   }
+//   variable_del('flexiaccess_types');
+//   variable_del('flexiaccess_priority');
+//   node_access_rebuild();
+// }

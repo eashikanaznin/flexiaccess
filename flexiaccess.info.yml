@@ -1,0 +1,4 @@
+type: module
+name: flexiaccess
+description: "Interface to ACL module to manage per user access control."
+core_version_requirement: "^10.3 || ^11 || ^12"
